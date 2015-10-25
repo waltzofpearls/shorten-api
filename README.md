@@ -1,1 +1,1 @@
-# shorten.go
+# shorten-go

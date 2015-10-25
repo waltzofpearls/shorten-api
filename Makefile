@@ -1,9 +1,9 @@
 .PHONY: test clean build
 
-build: shorten.go
+build: shorten-go
 
 run: build
-	./shorten.go
+	./shorten-go
 
 test:
 	go vet ./...
@@ -12,6 +12,6 @@ test:
 clean:
 	go clean ./...
 
-shorten.go: *.go
+shorten-go: *.go
 	go build
 
