@@ -1,9 +1,9 @@
 .PHONY: test clean build
 
-build: shorten-go
+build: shorten-api-go
 
 run: build
-	./shorten-go
+	./shorten-api-go
 
 test:
 	go vet ./...
@@ -11,7 +11,12 @@ test:
 
 clean:
 	go clean ./...
+	rm -f shorten-api-go
 
-shorten-go: *.go
+config.json:
+	cp -f config.json-dist config.json
+
+shorten-api-go: *.go
+	go get ./...
 	go build
 
